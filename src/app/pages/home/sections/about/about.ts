@@ -29,27 +29,28 @@ export class About implements AfterViewInit {
 
     const el = this.aboutSection.nativeElement;
 
-    // Check if already visible after refresh
-    const rect = el.getBoundingClientRect();
+    setTimeout(() => {
+      const rect = el.getBoundingClientRect();
 
-    if (rect.top < window.innerHeight) {
-      console.log('ADDING CLASS');
-      el.classList.add('smth');
-      return;
-    }
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          el.classList.add('in-view');
-          observer.disconnect();
-        }
-      },
-      {
-        threshold: 0.2
+      if (rect.top < window.innerHeight && rect.bottom > 0) {
+        el.classList.add('in-view');
+        return;
       }
-    );
 
-    observer.observe(el);
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            el.classList.add('in-view');
+            observer.disconnect();
+          }
+        },
+        {
+          threshold: 0.15
+        }
+      );
+
+      observer.observe(el);
+
+    }, 150);
   }
 }

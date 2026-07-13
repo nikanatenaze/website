@@ -1,230 +1,322 @@
 .about-section {
-  background-color: #ffffff;
-  color: #1a1a1a;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
-    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  padding: 6rem 10%;
-  position: relative;
-  overflow: hidden;
+    background-color: #ffffff;
+    color: #1a1a1a;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+        Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    padding: 6rem 10%;
+    position: relative;
+    overflow: hidden;
+}
+
+/* ── Subtle background shadow blobs ── */
+
+.about-section::before,
+.about-section::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(90px);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.about-section::before {
+    width: 420px;
+    height: 420px;
+    top: -120px;
+    left: -100px;
+    background: radial-gradient(circle, rgba(102, 0, 197, 0.08), transparent 70%);
+}
+
+.about-section::after {
+    width: 380px;
+    height: 380px;
+    bottom: -140px;
+    right: -80px;
+    background: radial-gradient(circle, rgba(102, 0, 197, 0.06), transparent 70%);
 }
 
 .about-content {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 4rem;
-  max-width: 1200px;
-  margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.about-content::before,
+.about-content::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(100px);
+    pointer-events: none;
+    z-index: -1;
+}
+
+.about-content::before {
+    width: 340px;
+    height: 340px;
+    top: 10%;
+    right: 10%;
+    background: radial-gradient(circle, rgba(83, 0, 160, 0.05), transparent 70%);
+}
+
+.about-content::after {
+    width: 300px;
+    height: 300px;
+    bottom: -10%;
+    left: 15%;
+    background: radial-gradient(circle, rgba(127, 66, 167, 0.05), transparent 70%);
 }
 
 .about-text {
-  flex: 1 1 50%;
-  min-width: 0;
+    flex: 1 1 50%;
+    min-width: 0;
 }
 
 /* ── Tag pill (self-contained, stays dark regardless of section bg) ── */
 
 .tag-box {
-  position: relative;
-  width: fit-content;
-  min-width: 12rem;
-  height: 2.25rem;
-  border-radius: 50px;
-  background: linear-gradient(
-    to right,
-    #656565, #7f42a7, #6600c5, #5300a0, #757575, #656565
-  );
-  background-size: 200%;
-  animation: aboutGradient 2.5s linear infinite;
-  box-shadow: 0 0 15px rgba(102, 0, 197, 0.15);
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    position: relative;
+    width: fit-content;
+    min-width: 12rem;
+    height: 2.25rem;
+    border-radius: 50px;
+    background: linear-gradient(to right,
+            #656565, #7f42a7, #6600c5, #5300a0, #757575, #656565);
+    background-size: 200%;
+    animation: aboutGradient 2.5s linear infinite;
+    box-shadow: 0 0 15px rgba(102, 0, 197, 0.15);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 @keyframes aboutGradient {
-  to { background-position: 200%; }
+    to {
+        background-position: 200%;
+    }
 }
 
 .tag {
-  position: absolute;
-  inset: 2.5px;
-  background-color: #000;
-  border-radius: 50px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 0.68rem;
-  font-weight: 700;
-  letter-spacing: 0.2em;
-  color: #c0a0e0;
-  padding: 0 1rem;
+    position: absolute;
+    inset: 2.5px;
+    background-color: #000;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    color: #c0a0e0;
+    padding: 0 1rem;
 }
 
 .about-text h2 {
-  font-size: clamp(2rem, 3.5vw, 3rem);
-  font-weight: 700;
-  letter-spacing: 0.02em;
-  line-height: 1.15;
-  margin: 1.75rem 0 0 0;
-  color: #111;
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    line-height: 1.15;
+    margin: 1.75rem 0 0 0;
+    color: #111;
 }
 
 .description {
-  font-size: 1rem;
-  letter-spacing: 0.01em;
-  line-height: 1.8;
-  max-width: 30rem;
-  color: #555;
-  margin: 1.5rem 0 0 0;
+    font-size: 1rem;
+    letter-spacing: 0.01em;
+    line-height: 1.8;
+    max-width: 30rem;
+    color: #555;
+    margin: 1.5rem 0 0 0;
 }
 
 /* ── Personal strengths pills ── */
 
 .traits {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.6rem;
-  margin-top: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin-top: 2rem;
 }
 
 .trait-item {
-  font-size: 0.78rem;
-  font-weight: 600;
-  letter-spacing: 0.04em;
-  color: #6600c5;
-  border: 1px solid #e4d6f2;
-  border-radius: 50px;
-  padding: 0.4rem 1rem;
-  background-color: #faf6fd;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    color: #6600c5;
+    border: 1px solid #e4d6f2;
+    border-radius: 50px;
+    padding: 0.4rem 1rem;
+    background-color: #faf6fd;
 }
 
 /* ── Tech stack pills ── */
 
 .stack {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.6rem;
-  margin-top: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin-top: 2rem;
 }
 
 .stack-item {
-  font-size: 0.78rem;
-  font-weight: 600;
-  letter-spacing: 0.04em;
-  color: #c0a0e0;
-  border: 1px solid #333;
-  border-radius: 50px;
-  padding: 0.4rem 1rem;
-  background-color: #0d0d0d;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    color: #c0a0e0;
+    border: 1px solid #333;
+    border-radius: 50px;
+    padding: 0.4rem 1rem;
+    background-color: #0d0d0d;
 }
 
 /* ── Code card (signature element — dark card floating on white section) ── */
 
 .about-card {
-  flex: 1 1 45%;
-  display: flex;
-  justify-content: center;
-  min-width: 0;
-  opacity: 1;
-  transform: translateY(24px);
-  transition: opacity 0.7s ease, transform 0.7s ease;
+    flex: 1 1 45%;
+    display: flex;
+    justify-content: center;
+    min-width: 0;
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
 }
 
-.smth {
-  opacity: 1;
-  transform: translateY(0);
+.about-section.in-view .about-card {
+    opacity: 1 !important;
+    transform: translateY(0);
 }
 
 .code-card {
-  width: 100%;
-  max-width: 26rem;
-  background-color: #0a0a0a;
-  border: 1px solid #1e1e1e;
-  border-radius: 12px;
-  box-shadow: 0 20px 60px rgba(102, 0, 197, 0.18);
-  overflow: hidden;
+    width: 100%;
+    max-width: 26rem;
+    background-color: #0a0a0a;
+    border: 1px solid #1e1e1e;
+    border-radius: 12px;
+    box-shadow: 0 20px 60px rgba(102, 0, 197, 0.18);
+    overflow: hidden;
+    transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+}
+
+.code-card:hover {
+    transform: translateY(-8px);
+    border-color: #3a2a4a;
+    box-shadow: 0 28px 70px rgba(102, 0, 197, 0.3);
 }
 
 .code-card-header {
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
-  padding: 0.75rem 1rem;
-  background-color: #111;
-  border-bottom: 1px solid #262626;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.75rem 1rem;
+    background-color: #111;
+    border-bottom: 1px solid #262626;
 }
 
 .dot {
-  width: 0.6rem;
-  height: 0.6rem;
-  border-radius: 50%;
+    width: 0.6rem;
+    height: 0.6rem;
+    border-radius: 50%;
 }
 
-.dot-red { background-color: #ff5f56; }
-.dot-yellow { background-color: #ffbd2e; }
-.dot-green { background-color: #27c93f; }
+.dot-red {
+    background-color: #ff5f56;
+}
+
+.dot-yellow {
+    background-color: #ffbd2e;
+}
+
+.dot-green {
+    background-color: #27c93f;
+}
 
 .code-card-filename {
-  margin-left: 0.5rem;
-  font-size: 0.75rem;
-  color: #888;
-  font-family: 'SF Mono', 'Fira Code', Consolas, monospace;
+    margin-left: 0.5rem;
+    font-size: 0.75rem;
+    color: #888;
+    font-family: 'SF Mono', 'Fira Code', Consolas, monospace;
 }
 
 .code-card-body {
-  margin: 0;
-  padding: 1.25rem 1.5rem;
-  font-family: 'SF Mono', 'Fira Code', Consolas, monospace;
-  font-size: 0.85rem;
-  line-height: 1.9;
-  overflow-x: auto;
-  white-space: pre;
-  color: #e7e7e7;
+    margin: 0;
+    padding: 1.25rem 1.5rem;
+    font-family: 'SF Mono', 'Fira Code', Consolas, monospace;
+    font-size: 0.85rem;
+    line-height: 1.9;
+    overflow-x: auto;
+    white-space: pre;
+    color: #e7e7e7;
 }
 
 .c-brace {
-  color: #d0a0f0;
-  font-weight: 700;
+    color: #d0a0f0;
+    font-weight: 700;
 }
-.c-key { color: #c0a0e0; }
-.c-string { color: #9dd07a; }
-.c-number { color: #d19a66; }
-.c-bool { color: #56b6c2; }
+
+.c-key {
+    color: #c0a0e0;
+}
+
+.c-string {
+    color: #9dd07a;
+}
+
+.c-number {
+    color: #d19a66;
+}
+
+.c-bool {
+    color: #56b6c2;
+}
 
 /* ── Responsive ── */
 
 @media (max-width: 900px) {
-  .about-section {
-    padding: 5rem 6%;
-  }
+    .about-section {
+        padding: 5rem 6%;
+    }
 
-  .about-content {
-    flex-direction: column;
-    gap: 3rem;
-  }
+    .about-content {
+        flex-direction: column;
+        gap: 3rem;
+    }
 
-  .about-card {
-    width: 100%;
-  }
+    .about-card {
+        width: 100%;
+    }
 }
 
 @media (max-width: 480px) {
-  .about-text h2 {
-    font-size: 2rem;
-  }
+    .about-text h2 {
+        font-size: 2rem;
+    }
 
-  .code-card-body {
-    font-size: 0.75rem;
-    padding: 1rem;
-  }
+    .code-card-body {
+        font-size: 0.75rem;
+        padding: 1rem;
+    }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .about-card {
-    transition: none;
-  }
-  .tag-box {
-    animation: none;
-  }
+    .about-card {
+        transition: none;
+    }
+
+    .tag-box {
+        animation: none;
+    }
+
+    .code-card {
+        transition: none;
+    }
+
+    .code-card:hover {
+        transform: none;
+    }
 }
