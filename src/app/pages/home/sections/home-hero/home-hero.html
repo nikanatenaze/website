@@ -1,31 +1,37 @@
-<body class="content">
-<img class="image-gradient" src="/gradient.png" alt="gradient">
-<div class="layer-blur"></div>
+<section class="section">
+  <div class="content">
+    <img class="image-gradient" src="/gradient.png" alt="gradient">
+    <div class="layer-blur"></div>
 
-<main>
-  <div class="main-content">
-    <div class="tag-box">
-      <div class="tag">INTRODUCING</div>
-    </div>
+    <main>
+      <div class="main-content">
+        <div class="tag-box">
+          <div class="tag">INTRODUCING</div>
+        </div>
 
-    <h1>NIKOLOZ<br>NATENADZE</h1>
+        <h1>NIKOLOZ<br>NATENADZE</h1>
 
-    <p class="description">
-      I'm a 17-year-old software developer from Georgia — building projects,
-      sharpening my skills, and pushing toward a future in Germany.
-      <br><br>
-      Turning curiosity into code, one project at a time.
-    </p>
+        <p class="description">
+          I'm a 17-year-old software developer from Georgia — building projects,
+          sharpening my skills, and pushing toward a future in Germany.
+          <br><br>
+          Turning curiosity into code, one project at a time.
+        </p>
 
-    <div class="buttons">
-      <a href="" class="btn-download-cv">Download CV &rsaquo;</a>
-      <a href="" class="btn-read-more">Read More &rsaquo;</a>
-    </div>
+        <div class="buttons">
+          <a href="" class="btn-download-cv">Download CV &rsaquo;</a>
+          <a href="" class="btn-read-more">Read More &rsaquo;</a>
+        </div>
+      </div>
+
+      <div class="robot-container">
+        <div class="spline-loader">
+          <div class="spline-loader-spinner"></div>
+        </div>
+
+        <spline-viewer #splineViewer class="robot-3d"
+          url="https://prod.spline.design/bJ3J5PNJpkMbpnJc/scene.splinecode"></spline-viewer>
+      </div>
+    </main>
   </div>
-</main>
-
-<spline-viewer
-  class="robot-3d"
-  url="https://prod.spline.design/bJ3J5PNJpkMbpnJc/scene.splinecode"
-></spline-viewer>
-</body>
+</section>
