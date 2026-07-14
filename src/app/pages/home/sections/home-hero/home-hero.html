@@ -1,5 +1,7 @@
 <section class="section">
   <div class="content">
+    <div class="cursor-glow" #cursorGlow></div>
+
     <img class="image-gradient" src="./gradient.png" alt="gradient">
     <div class="layer-blur"></div>
 
@@ -20,12 +22,12 @@
 
         <div class="buttons">
           <a href="" class="btn-download-cv">Download CV &rsaquo;</a>
-          <a href="" class="btn-read-more">Read More &rsaquo;</a>
+          <a href="javascript:void(0)" class="btn-read-more" (click)="scrollToAbout()">Read More &rsaquo;</a>
         </div>
       </div>
 
       <div class="robot-container">
-        <div class="spline-loader">
+        <div class="spline-loader" *ngIf="isSplineLoading">
           <div class="spline-loader-spinner"></div>
         </div>
 

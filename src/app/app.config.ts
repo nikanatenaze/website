@@ -11,7 +11,7 @@ export const appConfig: ApplicationConfig = {
     provideRouter(
       routes, 
       withInMemoryScrolling({ 
-        scrollPositionRestoration: 'disabled' // 👈 გადმოვიდა provideRouter-ის შიგნით
+        scrollPositionRestoration: 'disabled'
       })
     ), 
     provideClientHydration(withEventReplay())

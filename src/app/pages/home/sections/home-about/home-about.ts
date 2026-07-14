@@ -1,21 +1,13 @@
-import {
-  AfterViewInit,
-  Component,
-  ElementRef,
-  ViewChild,
-  Inject,
-  PLATFORM_ID
-} from '@angular/core';
-import { CommonModule, isPlatformBrowser } from '@angular/common';
+import { isPlatformBrowser } from '@angular/common';
+import { Component, ElementRef, Inject, PLATFORM_ID, ViewChild } from '@angular/core';
 
 @Component({
-  selector: 'app-about',
-  standalone: true,
-  imports: [CommonModule],
-  templateUrl: './about.html',
-  styleUrl: './about.css'
+  selector: 'app-home-about',
+  imports: [],
+  templateUrl: './home-about.html',
+  styleUrl: './home-about.css',
 })
-export class About implements AfterViewInit {
+export class HomeAbout {
 
   @ViewChild('aboutSection')
   aboutSection!: ElementRef<HTMLElement>;
